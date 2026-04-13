@@ -1,5 +1,5 @@
 import { useState, type Ref } from 'react';
-import { Interpose } from 'react-interpose';
+import { Interpose } from 'react-between';
 import './App.css';
 
 function Card({ label, visible }: { label: string; visible: boolean }) {
@@ -81,7 +81,7 @@ export function App() {
                 </div>
 
                 <div className="sidebar">
-                    <h1>react-interpose</h1>
+                    <h1>react-between</h1>
                     <p className="subtitle">
                         Toggle children — dividers adjust automatically.
                     </p>

@@ -1,14 +1,14 @@
-# react-interpose
+# react-between
 
-[![CI](https://img.shields.io/github/actions/workflow/status/frayeralex/react-interpose/ci.yml?branch=main&label=CI)](https://github.com/frayeralex/react-interpose/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/react-interpose)](https://www.npmjs.com/package/react-interpose)
-[![unpacked size](https://img.shields.io/npm/unpacked-size/react-interpose)](https://www.npmjs.com/package/react-interpose)
-[![license](https://img.shields.io/github/license/frayeralex/react-interpose)](./LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/frayeralex/react-between/ci.yml?branch=main&label=CI)](https://github.com/frayeralex/react-between/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/react-between)](https://www.npmjs.com/package/react-between)
+[![unpacked size](https://img.shields.io/npm/unpacked-size/react-between)](https://www.npmjs.com/package/react-between)
+[![license](https://img.shields.io/github/license/frayeralex/react-between)](./LICENSE)
 
 Insert dividers between React children that actually handles conditionally rendered components. Zero extra DOM wrappers.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/frayeralex/react-interpose/main/.github/demo.gif" alt="react-interpose demo" width="720" />
+  <img src="https://raw.githubusercontent.com/frayeralex/react-between/main/.github/demo.gif" alt="react-between demo" width="720" />
 </p>
 
 ## The Problem
@@ -34,10 +34,10 @@ This is a [known React limitation](https://github.com/facebook/react/issues/5517
 
 ## The Solution
 
-`react-interpose` checks the **actual DOM** after render. Using `useLayoutEffect` and `MutationObserver`, it detects which children produced visible output and hides dividers that have nothing between them — synchronously, before the browser paints.
+`react-between` checks the **actual DOM** after render. Using `useLayoutEffect` and `MutationObserver`, it detects which children produced visible output and hides dividers that have nothing between them — synchronously, before the browser paints.
 
 ```tsx
-import { Interpose } from 'react-interpose';
+import { Interpose } from 'react-between';
 
 <Interpose divider={<hr />}>
     <Header />
@@ -57,7 +57,7 @@ No consecutive separators, ever. Children toggle between content and `null` at a
 
 Let's be honest: walking the DOM after render to fix what React can't express declaratively is a hack. It works, it's reliable, but it's working around a fundamental gap in React's component model. The alternative is pre-filtering children or lifting conditional logic to the parent — which is simpler and has zero runtime cost.
 
-Use `react-interpose` when the simple approach doesn't work. Don't use it as a default.
+Use `react-between` when the simple approach doesn't work. Don't use it as a default.
 
 ### When you don't need it
 
@@ -71,7 +71,7 @@ Use `react-interpose` when the simple approach doesn't work. Don't use it as a d
 </Stack>
 ```
 
-This handles the majority of cases with zero overhead. `react-interpose` exists for the remaining cases where:
+This handles the majority of cases with zero overhead. `react-between` exists for the remaining cases where:
 
 - Children are **components that conditionally return `null` internally** — the parent can't know at render time
 - Children toggle between content and `null` dynamically (timers, API responses, user interactions)
@@ -82,15 +82,15 @@ If you control the render logic and can filter before passing children — do th
 ## Install
 
 ```sh
-npm install react-interpose
+npm install react-between
 ```
 
 ```sh
-pnpm add react-interpose
+pnpm add react-between
 ```
 
 ```sh
-yarn add react-interpose
+yarn add react-between
 ```
 
 Requires `react` >= 16.8.0 and `react-dom` >= 16.8.0 as peer dependencies. No other runtime dependencies.
@@ -98,7 +98,7 @@ Requires `react` >= 16.8.0 and `react-dom` >= 16.8.0 as peer dependencies. No ot
 ## Quick Start
 
 ```tsx
-import { Interpose } from 'react-interpose';
+import { Interpose } from 'react-between';
 
 function App() {
     return (
@@ -219,14 +219,14 @@ All of this happens synchronously before the browser paints, so there is no flas
 
 | Library              | Handles null children                                                       | Wrapper elements | Approach                 |
 | -------------------- | --------------------------------------------------------------------------- | ---------------- | ------------------------ |
-| **react-interpose**  | Yes                                                                         | None             | DOM-level detection      |
+| **react-between**  | Yes                                                                         | None             | DOM-level detection      |
 | react-with-separator | No                                                                          | None             | `React.Children.toArray` |
 | react-group          | No                                                                          | None             | `React.Children.toArray` |
 | react-extras (Join)  | No                                                                          | None             | `React.Children.toArray` |
 | Chakra UI Stack      | No ([known issue](https://github.com/chakra-ui/chakra-ui/discussions/7409)) | Container        | `React.Children.toArray` |
 | MUI Stack            | No ([known issue](https://github.com/mui/material-ui/issues/39160))         | Container        | `React.Children.toArray` |
 
-Every existing solution operates at the React element level. `react-interpose` is the only one that checks the actual DOM output.
+Every existing solution operates at the React element level. `react-between` is the only one that checks the actual DOM output.
 
 ## Trade-offs
 

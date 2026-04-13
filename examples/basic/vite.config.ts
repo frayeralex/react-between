@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [react()],
     resolve: {
         alias: {
-            'react-interpose': fileURLToPath(
+            'react-between': fileURLToPath(
                 new URL('../../src/index.ts', import.meta.url),
             ),
         },

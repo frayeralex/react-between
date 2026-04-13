@@ -2,7 +2,7 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "paths": {
-            "react-interpose": ["../../src/index.ts"]
+            "react-between": ["../../src/index.ts"]
         }
     },
     "include": ["src", "vite.config.ts"]

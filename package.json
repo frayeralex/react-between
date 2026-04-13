@@ -1,5 +1,5 @@
 {
-    "name": "react-interpose",
+    "name": "react-between",
     "version": "0.1.0",
     "description": "Insert dividers between React children that handles conditionally rendered components",
     "author": "Oleksii Boiko <frayeralex>",
@@ -7,11 +7,11 @@
     "type": "module",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/frayeralex/react-interpose.git"
+        "url": "git+https://github.com/frayeralex/react-between.git"
     },
-    "homepage": "https://github.com/frayeralex/react-interpose#readme",
+    "homepage": "https://github.com/frayeralex/react-between#readme",
     "bugs": {
-        "url": "https://github.com/frayeralex/react-interpose/issues"
+        "url": "https://github.com/frayeralex/react-between/issues"
     },
     "keywords": [
         "react",
