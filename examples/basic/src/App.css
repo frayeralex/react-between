@@ -8,10 +8,7 @@ html,
 body,
 h1,
 h2,
-p,
-dl,
-dt,
-dd {
+p {
     margin: 0;
     padding: 0;
 }
@@ -27,9 +24,8 @@ body {
         sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
     background: #f3f4f6;
-    padding: 40px 20px;
+    padding: 24px;
 }
 
 .page {
@@ -37,47 +33,62 @@ body {
     margin: 0 auto;
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 4px;
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 20px;
+    align-items: start;
 }
 
-h2 {
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+/* --- Sidebar (right) --- */
+
+.sidebar {
+    position: sticky;
+    top: 24px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.subtitle {
+    font-size: 12px;
     opacity: 0.5;
     margin-bottom: 12px;
 }
 
-.subtitle {
-    opacity: 0.6;
-    margin-bottom: 24px;
-}
-
 .controls {
     display: flex;
-    gap: 16px;
-    margin-bottom: 32px;
-    padding: 16px;
-    background: #fff;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .toggle {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     user-select: none;
 }
 
-.demo {
-    margin-bottom: 32px;
+/* --- Demos (left) --- */
+
+.demos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h2 {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.35;
+    margin-bottom: 4px;
 }
 
 .stack {
@@ -86,49 +97,39 @@ h2 {
 }
 
 .card {
-    padding: 16px 20px;
+    padding: 8px 12px;
     background: #fff;
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
+    border-radius: 6px;
+    font-size: 13px;
     font-weight: 500;
 }
 
 .divider {
     position: relative;
     border: none;
-    height: 10px;
+    height: 8px;
     margin: 0;
 }
 
 .divider::before {
     content: '';
     position: absolute;
-    inset: 4px;
-    background: #e5e7eb;
+    inset: 3px;
+    background: #93c5fd;
+    border-radius: 1px;
 }
 
-.breadcrumb {
+.inline-box {
     display: flex;
     align-items: center;
-    gap: 0;
-    padding: 12px 16px;
+    padding: 8px 12px;
     background: #fff;
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #6b7280;
-}
-
-.meta {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    padding: 12px 16px;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 13px;
     color: #6b7280;
+    min-height: 34px;
 }
 
 .tag {
@@ -137,13 +138,7 @@ h2 {
 }
 
 .dot {
-    margin: 0 8px;
-    font-size: 18px;
-    color: #d1d5db;
-}
-
-.hint {
-    font-size: 13px;
-    opacity: 0.5;
-    margin-top: 16px;
+    margin: 0 6px;
+    font-size: 16px;
+    color: #60a5fa;
 }

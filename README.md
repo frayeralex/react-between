@@ -7,6 +7,10 @@
 
 Insert dividers between React children that actually handles conditionally rendered components. Zero extra DOM wrappers.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/frayeralex/react-interpose/main/.github/demo.gif" alt="react-interpose demo" width="720" />
+</p>
+
 ## The Problem
 
 Every existing separator solution works at the **React element level** — they intersperse separators using `React.Children.toArray()`. But React can't look ahead to see what a component renders. When a child returns `null`, you get consecutive separators:

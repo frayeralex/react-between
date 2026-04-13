@@ -85,7 +85,11 @@ export function Interpose({
 
         // Primitives (string, number) — only case that needs a wrapper
         return (
-            <span key={key} ref={setRef} style={{ display: 'contents' }}>
+            <span
+                key={key}
+                ref={setRef}
+                style={{ display: 'contents', whiteSpace: 'pre' }}
+            >
                 {divider}
             </span>
         );
