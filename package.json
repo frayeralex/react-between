@@ -1,6 +1,6 @@
 {
     "name": "react-between",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Insert dividers between React children that handles conditionally rendered components",
     "author": "Oleksii Boiko <frayeralex>",
     "license": "MIT",
