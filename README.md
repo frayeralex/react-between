@@ -219,7 +219,7 @@ All of this happens synchronously before the browser paints, so there is no flas
 
 | Library              | Handles null children                                                       | Wrapper elements | Approach                 |
 | -------------------- | --------------------------------------------------------------------------- | ---------------- | ------------------------ |
-| **react-between**  | Yes                                                                         | None             | DOM-level detection      |
+| **react-between**    | Yes                                                                         | None             | DOM-level detection      |
 | react-with-separator | No                                                                          | None             | `React.Children.toArray` |
 | react-group          | No                                                                          | None             | `React.Children.toArray` |
 | react-extras (Join)  | No                                                                          | None             | `React.Children.toArray` |
